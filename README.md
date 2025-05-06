@@ -1,33 +1,25 @@
-# YuxiFlightInstrumentsforSF
+# Yuxi-Flight-Instruments-for-SF
 
-## 简介
-一套飞行仪表系统，用于基于[SaccFlight](https://github.com/Sacchan-VRC/SaccFlightAndVehicles)制作的VRChat飞行地图。
-目前主要做完了空速表、姿态仪、高度表、转弯协调表、航向指示表与垂直速率表(六大金刚)。
+## Introduction
 
-![一个示意图](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/documents/pic1.png)
+A set of flight instruments designed for VRChat flight maps based on [SaccFlight](https://github.com/Sacchan-VRC/SaccFlightAndVehicles).
+Currently, the main completed instruments include the airspeed indicator, attitude indicator, altimeter, turn coordinator, heading indicator, and vertical speed indicator (the "Big Six").
 
-上图只是示例仪表模型，有点简陋(俺不太会建模捏)，但编写脚本时有考虑到复用性，所以应该可以方便地将其替换为其他模型，只需设置好动画，无需额外添加代码。
+![A sample diagram](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/documents/pic1.png)
 
-## 繁介
-咱就是说有一天突然突然想自己做一个SF的机模，翻了翻SaccFlight的代码，然后就突然觉得，UdonSharp也不咋难嘛，花了两三天的时间，补了点开发知识，搞个这么个玩意。
-总体来说，让仪表动起来需要2个脚本，1个动画控制器，程序里发生事情基本上就是下面这样：
-* 脚本
-[YFI_FlightDataInterface.cs](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/Scripts/YFI_FlightDataInterface.cs)
-用于从SAVController中读取或计算大部分飞行数据。
-* 脚本
-[YFI_AnimatorController.cs](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/Scripts/YFI_AnimatorController.cs)
-用于将飞行数组转换为0~1的参数以驱动仪表所属的动画控制器，可以在这里设置仪表量程等参数
+The image above is just a sample instrument model, and it’s a bit rough (I’m not very good at modeling, lol). But I kept reusability in mind when writing the scripts, so it should be easy to replace the models—just set up the animations, no additional code needed.
 
-不久之后我会更新一下上述过程的更多细节捏~
+## Detailed Description
 
-## Intruduce(ENG)
-A flight instrusments script for flight world in VRChat with [SaccFlight](https://github.com/Sacchan-VRC/SaccFlightAndVehicles) .
-Including Basic-T(Altimeter, Airspeed indicator, Vertical speed indicator, Attitude Indicator,Heading indicator and Turn indicator)
-Example indicators come with repositories may look not that exquisitem(sorry for my poor modeling skill), but it's easy to substitute them with your own indicator models.
-To use another model, set the animator controller as require, set the params (SAVcontroller, animator controller, measurement range of a certain indicator etc.) for 
-[YFI_FlightDataInterface.cs](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/Scripts/YFI_FlightDataInterface.cs) and
-[YFI_AnimatorController.cs](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/Scripts/YFI_AnimatorController.cs) should be enough, no added code required.
+So one day, I suddenly felt like making an aircraft model for SF. I looked through the SaccFlight code and then realized that UdonSharp isn’t that hard. After spending two or three days brushing up on development knowledge, I managed to put this thing together.
+Overall, making the instruments work requires two scripts and one animator controller. The process looks roughly like this:
 
-An instrument with more detail will be updated soon.
+* Script
+  [YFI\_FlightDataInterface.cs](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/Scripts/YFI_FlightDataInterface.cs)
+  Used to read or calculate most of the flight data from the SAVController.
+
+* Script
+  [YFI\_AnimatorController.cs](https://github.com/Heriyadi235/YuxiFlightInstrumentsforSF/blob/main/Scripts/YFI_AnimatorController.cs)
+  Used to convert flight data into 0\~1 parameters to drive the animator controller associated with the instruments. Instrument ranges and other parameters can be set here.
 
 
